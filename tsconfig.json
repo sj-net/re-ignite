@@ -1,0 +1,16 @@
+{
+    "compilerOptions": {
+        "sourceMap": true, // Ensure source maps are generated
+        "skipLibCheck": true,
+        "target": "ESNext",
+        "module": "ESNext",
+        "moduleResolution": "Node",
+        "strict": true,
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+        "lib": ["dom", "esnext"],
+        "types": ["vite/client"],
+        "noImplicitAny": false
+    },
+    "exclude": ["node_modules", "dist"]
+}

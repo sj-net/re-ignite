@@ -1,0 +1,108 @@
+{
+  "name": "re-ignite",
+  "version": "0.0.27",
+  "description": "re-ignite is a blazing-fast, modular state management library built for React developers who want powerful control, fine-grained reactivity, and clean architecture without the boilerplate.",
+  "license": "MIT",
+  "main": "./lib/core.mjs",
+  "module": "./lib/core.mjs",
+  "types": "./lib/core.d.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./lib/core.mjs",
+      "types": "./lib/core.d.ts"
+    },
+    "./devtools": {
+      "import": "./lib/devtools.mjs",
+      "types": "./lib/devtools.d.ts"
+    },
+    "./middlewares": {
+      "import": "./lib/middlewares.mjs",
+      "types": "./lib/middlewares.d.ts"
+    },
+    "./persist": {
+      "import": "./lib/persist.mjs",
+      "types": "./lib/persist.d.ts"
+    },
+    "./react": {
+      "import": "./lib/react.mjs",
+      "types": "./lib/react.d.ts"
+    },
+    "./transformers": {
+      "import": "./lib/transformers.mjs",
+      "types": "./lib/transformers.d.ts"
+    }
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sj-net/re-ignite"
+  },
+  "homepage": "https://github.com/sj-net/re-ignite#readme",
+  "scripts": {
+    "build": "tsup",
+    "test": "yarn vitest --coverage --run --reporter=verbose",
+    "version-up": "node ./version-update.cjs",
+    "prerelease": "npm run version-up",
+    "release": "yarn build && npm publish --access public",
+    "rollup": "rollup -c"
+  },
+  "keywords": [
+    "state management",
+    "typescript",
+    "middlewares",
+    "transformers",
+    "immer",
+    "persist",
+    "react",
+    "devtools"
+  ],
+  "author": "Santosh Jallapuram",
+  "dependencies": {
+    "d3-state-visualizer": "^3.0.0",
+    "immer": "^10.1.1",
+    "just-clone": "^6.2.0",
+    "just-merge": "^3.2.0",
+    "microdiff": "^1.5.0",
+    "react-diff-viewer": "^3.1.1",
+    "react-json-tree": "^0.20.0"
+  },
+  "devDependencies": {
+    "@testing-library/dom": "^10.4.0",
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/react-hooks": "^8.0.1",
+    "@types/deep-diff": "^1.0.5",
+    "@types/deepmerge": "^2.2.3",
+    "@types/node": "^22.14.0",
+    "@types/react": "^19.1.0",
+    "@types/react-dom": "^19.1.1",
+    "@vitest/coverage-istanbul": "3.1.1",
+    "coverage-istanbul": "^1.1.2",
+    "fs": "^0.0.1-security",
+    "jsdom": "^26.0.0",
+    "minimist": "^1.2.8",
+    "path": "^0.12.7",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "rm": "^0.1.8",
+    "tslib": "^2.8.1",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.3",
+    "vite": "^6.2.5",
+    "vitest": "^3.1.1"
+  },
+  "peerDependencies": {
+    "react": "^18 || ^19",
+    "react-dom": "^18 || ^19"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
